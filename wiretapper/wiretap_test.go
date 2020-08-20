@@ -62,8 +62,9 @@ func TestWireTap(t *testing.T) {
 				t.Fatalf("invalid answer: want %v, got %v", tc.wantAnswer, ans)
 			}
 
-			if tc.wt.GetCounter() != tc.wantCallCount {
-				t.Fatalf("invalid callCount: want %v, got %v", tc.wantAnswer, ans)
+			callCount := tc.wt.GetCounter()
+			if callCount != tc.wantCallCount {
+				t.Fatalf("invalid callCount: want %v, got %v", tc.wantCallCount, callCount)
 			}
 		})
 	}
